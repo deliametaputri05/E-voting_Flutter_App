@@ -16,11 +16,16 @@ class LoginPage extends StatelessWidget {
               ),
               Text(
                 'Verifikasi Wajah',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
               ),
               const SizedBox(height: 24),
               ButtonWidget(
-                text: 'Mulai',
+                text: 'Sign Up',
+                onClicked: () => goToOnBoarding(context),
+              ),
+              const SizedBox(height: 10),
+              ButtonWidget(
+                text: 'Sign In',
                 onClicked: () => goToOnBoarding(context),
               ),
             ],
@@ -29,6 +34,6 @@ class LoginPage extends StatelessWidget {
       );
 
   void goToOnBoarding(context) => Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => OnBoardingPage()),
+        MaterialPageRoute(builder: (_) => MainPage()),
       );
 }

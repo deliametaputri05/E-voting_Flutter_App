@@ -27,7 +27,7 @@ class OnBoardingPage extends StatelessWidget {
             PageViewModel(
               title: 'Pemilihan Raya',
               body:
-                  'Pemilihan Raya Ketua Organisasi Mahasiswa Politeknik Negeri Indramayu yaitu MPM, BEM dan HMJ.',
+                  'Pemilihan Raya Ketua Organisasi Mahasiswa Politeknik Negeri Indramayu yaitu MPM, \n BEM dan HMJ.',
               image: Image.asset(
                 'assets/vector_4.png',
                 width: 220,
@@ -38,19 +38,6 @@ class OnBoardingPage extends StatelessWidget {
               // ),
               decoration: getPageDecoration(),
             ),
-            // PageViewModel(
-            //   title: '',
-            //   body: '',
-            //   footer: ButtonWidget(
-            //     text: 'Masuk',
-            //     onClicked: () => goToHome(context),
-            //   ),
-            //   image: Image.asset(
-            //     'assets/evote3.png',
-            //     width: 150,
-            //   ),
-            //   decoration: getPageDecoration(),
-            // ),
           ],
           done: Text('Masuk'),
           onDone: () => goToHome(context),
@@ -89,8 +76,8 @@ class OnBoardingPage extends StatelessWidget {
       );
 
   PageDecoration getPageDecoration() => PageDecoration(
-        titleTextStyle: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-        bodyTextStyle: TextStyle(fontSize: 20),
+        titleTextStyle: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
+        bodyTextStyle: TextStyle(fontSize: 18),
         descriptionPadding: EdgeInsets.all(16).copyWith(bottom: 0),
         imagePadding: EdgeInsets.all(24),
         pageColor: Colors.white,

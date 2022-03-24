@@ -10,7 +10,26 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) => MaterialApp(
         debugShowCheckedModeBanner: false,
         title: title,
-        theme: ThemeData(primarySwatch: Colors.blue),
+        theme: ThemeData(
+            appBarTheme: AppBarTheme(
+              textTheme: TextTheme(
+                headline6: TextStyle(
+                  color: Colors.white,
+                  fontFamily: 'FontPoppins',
+                  fontSize: 18,
+                  // fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            textTheme: TextTheme(
+              headline6: TextStyle(
+                  fontFamily: 'FontPoppins',
+                  fontWeight: FontWeight.w700,
+                  fontSize: 14,
+                  color: Colors.black),
+            ),
+            primarySwatch: Colors.blue,
+            fontFamily: 'FontPoppins'),
         home: OnBoardingPage(),
       );
 }
