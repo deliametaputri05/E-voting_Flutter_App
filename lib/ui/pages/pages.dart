@@ -1,9 +1,15 @@
+import 'package:evoting_flutter/cubit/ormawa_cubit.dart';
+import 'package:evoting_flutter/cubit/pemira_cubit.dart';
+import 'package:evoting_flutter/cubit/user_cubit.dart';
 import 'package:evoting_flutter/main.dart';
 import 'package:evoting_flutter/shared/shared.dart';
 import 'package:evoting_flutter/ui/widget/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:supercharged/supercharged.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -15,3 +21,4 @@ part 'profile_page.dart';
 part 'voting_page.dart';
 part 'main_page.dart';
 part 'general_page.dart';
+part 'sign_in_page.dart';

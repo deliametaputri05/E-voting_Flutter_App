@@ -26,7 +26,11 @@ class LoginPage extends StatelessWidget {
               const SizedBox(height: 10),
               ButtonWidget(
                 text: 'Sign In',
-                onClicked: () => goToOnBoarding(context),
+                onClicked: () {
+                  context.read<PemiraCubit>().getPemira();
+                  context.read<OrmawaCubit>().getOrmawa();
+                  Get.to(MainPage());
+                },
               ),
             ],
           ),
@@ -34,6 +38,9 @@ class LoginPage extends StatelessWidget {
       );
 
   void goToOnBoarding(context) => Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (_) => SignInPage()),
+      );
+  void goToHome(context) => Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (_) => MainPage()),
       );
 }

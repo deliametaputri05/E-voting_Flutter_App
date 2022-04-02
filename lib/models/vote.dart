@@ -2,17 +2,17 @@ part of 'models.dart';
 
 class Vote {
   int id, idPemira, idKandidat, jumlahSuara;
-  String Status;
+  String status;
 
   Vote(
-      {this.id, this.idPemira, this.idKandidat, this.jumlahSuara, this.Status});
+      {this.id, this.idPemira, this.idKandidat, this.jumlahSuara, this.status});
 
   Vote.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     idPemira = json['id_pemira'];
     idKandidat = json['id_kandidat'];
     jumlahSuara = json['jumlah_suara'];
-    Status = json['Status'];
+    status = json['status'];
   }
 
   Map<String, dynamic> toJson() {
@@ -21,7 +21,7 @@ class Vote {
     data['id_pemira'] = this.idPemira;
     data['id_kandidat'] = this.idKandidat;
     data['jumlah_suara'] = this.jumlahSuara;
-    data['Status'] = this.Status;
+    data['status'] = this.status;
     return data;
   }
 }

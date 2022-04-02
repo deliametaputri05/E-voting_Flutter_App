@@ -22,23 +22,27 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
   @override
   initState() {
     super.initState();
-    _title = 'E-Voting';
+    _title = '';
   }
 
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _bottomNavCurrentIndex != 2
           ? AppBar(
+              backgroundColor: Colors.blue,
               title: Text(_title),
               centerTitle: true,
               actions: [
-                IconButton(
-                  icon: Icon(Icons.search),
-                  onPressed: () {
-                    // Navigator.push(context,
-                    //     CupertinoPageRoute(builder: (context) => SearchPage()));
-                  },
-                ),
+                // IconButton(
+                //   icon: Icon(
+                //     Icons.search,
+                //     color: Colors.black,
+                //   ),
+                //   onPressed: () {
+                // Navigator.push(context,
+                //     //     CupertinoPageRoute(builder: (context) => SearchPage()));
+                //   },
+                // ),
               ],
             )
           : null,
@@ -102,7 +106,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
             switch (index) {
               case 0:
                 {
-                  _title = 'E-Voting';
+                  _title = '';
                 }
                 break;
               case 1:
