@@ -110,6 +110,7 @@ class _SignInPageState extends State<SignInPage> {
                       if (state is UserLoaded) {
                         context.read<PemiraCubit>().getPemira();
                         context.read<OrmawaCubit>().getOrmawa();
+                        context.read<KandidatCubit>().getKandidat();
                         Get.to(CustomBottomNavBar());
                       } else {
                         Get.snackbar("", "",

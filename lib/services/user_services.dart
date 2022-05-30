@@ -20,9 +20,11 @@ class UserServices {
 
     var data = jsonDecode(response.body);
 
+    print(response.body);
     User.token = data['data']['access_token'];
     User value = User.fromJson(data['data']['user']);
 
+    log('data: $data');
     return ApiReturnValue(value: value);
   }
 

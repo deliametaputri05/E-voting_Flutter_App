@@ -10,7 +10,7 @@ class OrmawaServices {
       return ApiReturnValue(message: 'Please try again');
     }
 
-    var data = jsonDecode(response.body);
+    var data = json.decode(response.body);
 
     List<Ormawa> ormawa =
         (data['data'] as List).map((e) => Ormawa.fromJson(e)).toList();
