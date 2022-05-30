@@ -1,19 +1,25 @@
 part of 'services.dart';
 
 class KandidatServices {
-  static Future<ApiReturnValue<List<Kandidat>>> getKandidat() async {
-    final response = await http.get(baseURL + "kandidat");
-    if (response.statusCode == 200) {
-      return ApiReturnValue<List<Kandidat>>(
-        value: List<Kandidat>.from(
-            json.decode(response.body).map((x) => Kandidat.fromJson(x))),
-        message: "Success",
-      );
-    } else {
-      return ApiReturnValue<List<Kandidat>>(
-        value: null,
-        message: "Failed",
-      );
+  static Future<ApiReturnValue<List<Kandidat>>> getKandidat(
+      {http.Client client}) async {
+    client ??= http.Client();
+
+    String url = baseURL + 'kandidats/{id_pemira?}';
+
+    var response = await client.get(url);
+
+    if (response.statusCode != 200) {
+      return ApiReturnValue(message: 'Please try again');
     }
+
+    var data = jsonDecode(response.body);
+
+    log('data: $data');
+
+    List<Kandidat> kandidat =
+        (data['data'] as List).map((e) => Kandidat.fromJson(e)).toList();
+
+    return ApiReturnValue(value: kandidat);
   }
 }

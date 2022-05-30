@@ -1,19 +1,23 @@
 part of 'services.dart';
 
 class CalonWakilServices {
-  static Future<ApiReturnValue<List<CalonWakil>>> getCalonWakil() async {
-    final response = await http.get(baseURL + "calonWakil");
-    if (response.statusCode == 200) {
-      return ApiReturnValue<List<CalonWakil>>(
-        value: List<CalonWakil>.from(
-            json.decode(response.body).map((x) => CalonWakil.fromJson(x))),
-        message: "Success",
-      );
-    } else {
-      return ApiReturnValue<List<CalonWakil>>(
-        value: null,
-        message: "Failed",
-      );
+  static Future<ApiReturnValue<List<CalonWakil>>> getCalonWakil(
+      {http.Client client}) async {
+    client ??= http.Client();
+
+    String url = baseURL + 'calon_wakil';
+
+    var response = await client.get(url);
+
+    if (response.statusCode != 200) {
+      return ApiReturnValue(message: 'Please try again');
     }
+
+    var data = jsonDecode(response.body);
+
+    List<CalonWakil> calonWakil =
+        (data['data'] as List).map((e) => CalonWakil.fromJson(e)).toList();
+
+    return ApiReturnValue(value: calonWakil);
   }
 }

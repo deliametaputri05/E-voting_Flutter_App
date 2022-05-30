@@ -34,18 +34,16 @@ class Pemira {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['id_ormawa'] = this.idOrmawa;
-    data['nama'] = this.nama;
-    if (this.ormawa != null) {
-      data['ormawa'] = this.ormawa.toJson();
-    }
-    data['foto'] = this.foto;
-    data['deskripsi'] = this.deskripsi;
-    data['tanggal'] = this.tanggal;
-    data['waktu_mulai'] = this.waktuMulai;
-    data['waktu_selesai'] = this.waktuSelesai;
-    return data;
+    return {
+      'id': id,
+      'id_ormawa': idOrmawa,
+      'nama': nama,
+      'ormawa': ormawa,
+      'foto': foto,
+      'deskripsi': deskripsi,
+      'tanggal': tanggal,
+      'waktu_mulai': waktuMulai,
+      'waktu_selesai': waktuSelesai
+    };
   }
 }

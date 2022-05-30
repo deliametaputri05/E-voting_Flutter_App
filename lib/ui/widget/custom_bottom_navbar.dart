@@ -33,16 +33,16 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
               title: Text(_title),
               centerTitle: true,
               actions: [
-                // IconButton(
-                //   icon: Icon(
-                //     Icons.search,
-                //     color: Colors.black,
-                //   ),
-                //   onPressed: () {
-                // Navigator.push(context,
-                //     //     CupertinoPageRoute(builder: (context) => SearchPage()));
-                //   },
-                // ),
+                IconButton(
+                  icon: Icon(
+                    Icons.exit_to_app,
+                    color: Colors.white,
+                  ),
+                  onPressed: () {
+                    // Navigator.push(context,
+                    //         CupertinoPageRoute(builder: (context) => SearchPage()));
+                  },
+                ),
               ],
             )
           : null,
@@ -123,7 +123,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
             color: Colors.white,
           ),
           Icon(
-            Icons.check_circle_outlined,
+            Icons.bar_chart_outlined,
             color: Colors.white,
           ),
           Icon(

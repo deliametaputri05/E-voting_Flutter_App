@@ -63,17 +63,6 @@ class PemiraCard extends StatelessWidget {
                             SizedBox(
                               height: 3,
                             ),
-                            // Container(
-                            //   width: 65,
-                            //   height: 20,
-                            //   child: ElevatedButton(
-                            //       onPressed: () {},
-                            //       child: Text(
-                            //         'Buka',
-                            //         style: TextStyle(
-                            //             color: Colors.white, fontSize: 10),
-                            //       )),
-                            // ),
                             Padding(
                               padding: const EdgeInsets.only(left: 18),
                               child: Container(

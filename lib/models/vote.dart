@@ -3,9 +3,17 @@ part of 'models.dart';
 class Vote {
   int id, idPemira, idKandidat, jumlahSuara;
   String status;
+  Pemira pemira;
+  Kandidat kandidat;
 
   Vote(
-      {this.id, this.idPemira, this.idKandidat, this.jumlahSuara, this.status});
+      {this.id,
+      this.idPemira,
+      this.idKandidat,
+      this.jumlahSuara,
+      this.status,
+      Kandidat pemira,
+      User user});
 
   Vote.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -13,6 +21,9 @@ class Vote {
     idKandidat = json['id_kandidat'];
     jumlahSuara = json['jumlah_suara'];
     status = json['status'];
+    pemira = (json['pemira'] != null) ? Pemira.fromJson(json['pemira']) : null;
+    kandidat =
+        (json['kandidat'] != null) ? Kandidat.fromJson(json['kandidat']) : null;
   }
 
   Map<String, dynamic> toJson() {

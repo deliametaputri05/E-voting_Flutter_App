@@ -7,3 +7,5 @@ part 'button_widget.dart';
 part 'custom_bottom_navbar.dart';
 part 'pemira_card.dart';
 part 'ormawa_card.dart';
+part 'kandidat_list_item.dart';
+part 'pemira_list_page.dart';

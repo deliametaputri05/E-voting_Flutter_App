@@ -1,3 +1,4 @@
+import 'package:evoting_flutter/cubit/cubit.dart';
 import 'package:evoting_flutter/cubit/pemira_cubit.dart';
 import 'package:evoting_flutter/ui/pages/pages.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => PemiraCubit()),
         BlocProvider(create: (_) => OrmawaCubit()),
         BlocProvider(create: (_) => UserCubit()),
+        BlocProvider(create: (_) => KandidatCubit()),
       ],
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
@@ -33,7 +35,7 @@ class MyApp extends StatelessWidget {
               backgroundColor: Colors.transparent,
               textTheme: TextTheme(
                 headline6: TextStyle(
-                  color: Colors.black,
+                  color: Colors.white,
                   fontFamily: 'FontPoppins',
                   fontSize: 18,
                   // fontWeight: FontWeight.bold,
