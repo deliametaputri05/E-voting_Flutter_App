@@ -5,7 +5,7 @@ class KandidatServices {
       {http.Client client}) async {
     client ??= http.Client();
 
-    String url = baseURL + 'kandidats/{id_pemira?}';
+    String url = baseURL + 'kandidat';
 
     var response = await client.get(url);
 

@@ -152,13 +152,7 @@ class _PemiraPageState extends State<PemiraPage> {
                                             onTap: () {
                                               Get.to(
                                                 PemiraDetailsPage(
-                                                  kandidat: Kandidat(
-                                                      pemira: e,
-                                                      user: (BlocProvider.of<
-                                                                      UserCubit>(
-                                                                  context)
-                                                              .state as UserLoaded)
-                                                          .user),
+                                                  id: e.id,
                                                   onBackButtonPressed: () {
                                                     Get.back();
                                                   },

@@ -1,36 +1,19 @@
 part of 'widgets.dart';
 
 class KandidatListItem extends StatelessWidget {
-  final Kandidat kandidat;
+  final data;
 
-  KandidatListItem(this.kandidat);
+  KandidatListItem(this.data);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          Container(
-            child: Row(
-              children: [
-                Container(
-                  width: 40,
-                  height: 40,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      image: DecorationImage(
-                        image: NetworkImage(kandidat.foto),
-                        fit: BoxFit.cover,
-                      )),
-                ),
-                Text(
-                  kandidat.noUrut.toString(),
-                ),
-              ],
-            ),
-          )
-        ],
+    return ListTile(
+      leading: CircleAvatar(
+        backgroundImage: NetworkImage(data.foto),
       ),
+      title: Text(data.nama),
+      subtitle: Text(data.nim),
+      trailing: Text(data.jurusan),
     );
   }
 }
